@@ -1,40 +1,41 @@
-package adventOfCode.calenda2020
+package se.nackademin
+
 
 import java.io.File
-import kotlin.jvm.optionals.asSequence
 
 val passwordList1 = File("src/main/resources/secondDaysReport.txt").readLines().toList().toMutableList()
 
 fun main() {
-//    7-10 v: mgvrwvvsjw
+    val resultList = ArrayList<Boolean>()
+    val a = passwordList1.stream()
+        .map { item -> mapToList(item) }
+        .filter() { conditionAndString ->
+            val allIndexes = getAllIndexes(conditionAndString[3], conditionAndString[2].get(0))
+            (allIndexes.contains(conditionAndString[0].toInt()) xor allIndexes.contains(conditionAndString[1].toInt()))
+        }.count()
 
-    val allIndexes = getAllIndexes("mgvrwvvsjw", 'v')
-    println(allIndexes)
-
-    if (allIndexes.contains(1) xor allIndexes.contains(5))
-        println("Yeeesss")
-    else
-        println("NOOOOOO")
-
-    val count = passwordList1.stream()
-        .map() { item -> mapToList(item) }
-        .filter() { item -> isCorrect(item) }
-        .count()
-    println(count)
+println(a)
 
 }
 
 fun mapToList(item: String): List<String> {
-    return item.split(": ")
-    println(item)
+    val arrayList = ArrayList<String>();
+
+    val twoFirst = item.split(": ")
+    val fitstPart = twoFirst[0].split(" ")
+    val nums = fitstPart[0].split("-")
+    arrayList.add(nums[0])
+    arrayList.add(nums[1])
+    arrayList.add(fitstPart[1])
+    arrayList.add(twoFirst[1])
+    return arrayList
 }
 
-fun isCorrect(item: List<String>): Boolean {
-    val controller = item[0].split(" ")
-    val minMax = controller[0].split("-")
-    val countCharInString = countCharInString(item[1], controller[1].get(0))
+fun isCorrect(conditionAndStringList: List<String>): Boolean {
 
-    return ((minMax[0].toLong() <= countCharInString) and (countCharInString <= minMax[1].toLong()))
+    val countCharInString = countCharInString(conditionAndStringList[3], conditionAndStringList[2].get(0))
+
+    return ((conditionAndStringList[0].toLong() <= countCharInString) and (countCharInString <= conditionAndStringList[1].toLong()))
 }
 
 fun countCharInString(pass: String, char: Char): Long {
@@ -51,7 +52,7 @@ fun countCharInString(pass: String, char: Char): Long {
 *
 * */
 fun getAllIndexes(pass: String, char: Char): List<Int> {
-    var index = -1;
+    var index = 0;
     val intList = ArrayList<Int>()
 
     pass.toList().forEach() { item ->
