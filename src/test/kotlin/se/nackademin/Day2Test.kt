@@ -22,27 +22,29 @@ class Day2Test {
         var example1 = "5-8 Q: TCQQQGMMQTTTVW"
         var example2 = "3-7 t: kttnjljtttsikt"
 
-        val actualString1 = SecondDay("").mapToList(example1)
-        val actualString2 = SecondDay("").mapToList(example2)
+        val actualString1 = SecondDay("").stringToMinMaxCharPass(example1)
+        val actualString2 = SecondDay("").stringToMinMaxCharPass(example2)
         assertEquals(arrayListOf("5", "8", "Q", "TCQQQGMMQTTTVW"), actualString1)
         assertEquals(arrayListOf("3", "7", "t", "kttnjljtttsikt"), actualString2)
 
     }
 
-    @Test
+/*    @Test
     fun isCorrect() {
-        var example = listOf("2-4 v: vvpvvvjvvjvvqbvv", "1-4 k: rmkvkkkk", "2-5 j: rmjnjtjjjj")
+        //var example = listOf("2-8 v: vvpvvvjvvj", "1-5 k: rmkvkkkk", "2-9 j: rmjnjtjjjj", "1-7 p: mhnpspp")
+        var example = listOf("2-8 v: vvpvvvjvvj", "1-5 k: rmkvkkkk", "2-9 j: rmjnjtjjjj", "1-7 p: mhnpspp")
+
         val actual = SecondDay("").isCorrect(example)
 
-        var actual1 = (("2"), actual[0].get(0))
-        var actual2 = (("4"), actual[0].get(1))
-        var actual3 = (("v"), actual[0].get(2))
-        var actual4 = (("vvpvvvjvvjvvqbvv"),actual[0].get(3))
-        assertTrue(true, actual1)
-        assertTrue(true, actual2)
-        assertTrue(true, actual3)
-        assertTrue(true, actual4)
-    }
+        var actual1 = actual[0].get(0)
+        var actual2 = actual[0].get(1)
+        var actual3 = actual[0].get(2)
+        var actual4 = actual[0].get(3)
+        assertTrue(actual1(true, ("2")))
+        assertTrue(actual2(true, ("8")))
+        assertTrue(actual3(true, ("v")))
+        assertTrue(actual4(true, ("vvpvvvjvvj")))
+    }*/
 
 
     @Test

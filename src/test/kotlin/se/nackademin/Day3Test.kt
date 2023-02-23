@@ -8,7 +8,7 @@ class Day3Test{
 
     @Test
     fun should_return_correct_steps() {
-        val actualTree = ThirdDay("src/test/resources/test.txt").calculateTrees()
+        val actualTree = ThirdDay("src/test/resources/test.txt").calculateTrees(3,1)
         assertEquals(5 ,actualTree)
     }
 
@@ -25,5 +25,12 @@ class Day3Test{
         assertEquals('.', actualChar2)
         assertEquals('#', actualChar3)
         assertEquals('.', actualChar4)
+    }
+
+    @Test
+    fun name() {
+        val elements = listOf("1", "2", "3", "4", "5", "6")
+
+        elements.chunked(1).stream().forEach(){it-> println(it.get(0)) }
     }
 }
