@@ -1,9 +1,14 @@
 package se.nackademin
 
-import kotlin.script.templates.standard.ScriptTemplateWithArgs
 
+fun main() {
+        println(FirstDay("").calcTwoNr(listOf()))
+        println(FirstDay("").calcThreeNr(0, listOf()))
+        println(FirstDay("").calc())
+        println(SecondDay("").countCorrectPasswordWithSecondPart())
 
-    fun main() {
+        println(SecondDay("").countCharInString("", '.'))
+        //println(SecondDay("").countCorrectPasswordWithFirstPart())
         println(ThirdDay("").calculateTrees())
     }
 
