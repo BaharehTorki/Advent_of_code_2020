@@ -10,11 +10,13 @@ class ThirdDay(private var filePath: String) {
     }
 
     private val listOfData = File(filePath).readLines()
+
     fun calculateTrees(right: Int, down: Int): Int {
         var index1 = 0
         return listOfData.subList(1, listOfData.size).chunked(down)
             .stream()
-            .map() { i -> i.get(down-1) }
+            .filter() { item -> item.size == down }
+            .map() { i -> i.get(down - 1) }
             .map { row ->
                 index1 += right
                 getCharAt(row, index1)
@@ -22,7 +24,8 @@ class ThirdDay(private var filePath: String) {
             .filter() { char ->
                 char.equals('#')
             }
-            .count().toInt()
+            .count()
+            .toInt()
     }
 
     fun getCharAt(str: String, i: Int): Char {
@@ -35,7 +38,7 @@ class ThirdDay(private var filePath: String) {
 
     //_________________________________PART2_______________________________________
     fun calculateTrees2(): Int {
-        listOf(
+        return listOf(
             1 to 1,
             3 to 1,
             5 to 1,
@@ -43,8 +46,8 @@ class ThirdDay(private var filePath: String) {
             1 to 2,
         ).stream()
             .map() { (r, d) -> calculateTrees(r, d) }
-            .forEach(){i -> println(i) }
-        return 0;
+            .reduce { a, b -> a * b }
+            .get()
     }
 
 }

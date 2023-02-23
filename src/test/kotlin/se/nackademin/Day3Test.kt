@@ -4,12 +4,17 @@ import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
 
-class Day3Test{
+class Day3Test {
+
+    val listOfTree = ThirdDay("src/test/resources/thirdReport.txt")
 
     @Test
-    fun should_return_correct_steps() {
-        val actualTree = ThirdDay("src/test/resources/test.txt").calculateTrees(3,1)
-        assertEquals(5 ,actualTree)
+    fun should_calculateTrees_correct() {
+        assertEquals(79, listOfTree.calculateTrees(1, 1))
+        assertEquals(216, listOfTree.calculateTrees(3, 1))
+        assertEquals(91, listOfTree.calculateTrees(5, 1))
+        assertEquals(96, listOfTree.calculateTrees(7, 1))
+        assertEquals(45, listOfTree.calculateTrees(1, 2))
     }
 
     @Test
@@ -28,9 +33,10 @@ class Day3Test{
     }
 
     @Test
-    fun name() {
-        val elements = listOf("1", "2", "3", "4", "5", "6")
-
-        elements.chunked(1).stream().forEach(){it-> println(it.get(0)) }
+    fun calculateTrees2_should_return_multiple_of_each_result() {
+        val actual = listOfTree.calculateTrees2()
+        val expected = 79*216*91*96*45
+        assertEquals(expected, actual)
     }
+
 }

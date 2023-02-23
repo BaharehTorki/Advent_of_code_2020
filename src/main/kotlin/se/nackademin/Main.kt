@@ -11,7 +11,7 @@ fun main() {
     println(SecondDay("").countCharInString("", '.'))
     //println(SecondDay("").countCorrectPasswordWithFirstPart())
     println("Day3 part1: " + ThirdDay("").calculateTrees(3, 1))//216*/
-    println("Day3 part2:" + ThirdDay("").calculateTrees2())
+    println("Day3 part2:" + ThirdDay("").calculateTrees2())//6708199680
 
 }
 
