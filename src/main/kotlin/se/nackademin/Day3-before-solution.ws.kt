@@ -1,7 +1,6 @@
 package se.nackademin
 
 import java.io.File
-
 class ThirdDay(private var filePath: String) {
     init {
         if (filePath.isEmpty()) {
@@ -11,7 +10,7 @@ class ThirdDay(private var filePath: String) {
 
     private val listOfData = File(filePath).readLines()
 
-    fun calculateTrees(right: Int, down: Int): Int {
+    fun calculateTrees(right: Int, down: Int): Long {
         var index1 = 0
         return listOfData.subList(1, listOfData.size).chunked(down)
             .stream()
@@ -25,7 +24,6 @@ class ThirdDay(private var filePath: String) {
                 char.equals('#')
             }
             .count()
-            .toInt()
     }
 
     fun getCharAt(str: String, i: Int): Char {
@@ -37,7 +35,7 @@ class ThirdDay(private var filePath: String) {
     }
 
     //_________________________________PART2_______________________________________
-    fun calculateTrees2(): Int {
+    fun calculateTrees2(): Long {
         return listOf(
             1 to 1,
             3 to 1,
@@ -48,6 +46,8 @@ class ThirdDay(private var filePath: String) {
             .map() { (r, d) -> calculateTrees(r, d) }
             .reduce { a, b -> a * b }
             .get()
+
+
     }
 
 }

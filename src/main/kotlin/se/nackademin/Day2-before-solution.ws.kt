@@ -77,7 +77,7 @@ class SecondDay(private var filePath: String) {
 
 //_____________________________PART2_____________________________
 
-    //char: 'b'     pass: "bhbjlkbbbbbbb"
+    //char: "b"     pass: "bhbjlkbbbbbbb"
     fun getAllIndexes(pass: String, char: Char): List<Int> {
         var index = 0;
         val intList = ArrayList<Int>()
