@@ -41,6 +41,7 @@ class SecondDay(private var filePath: String) {
         return ((minMaxCharPass[0].toInt() <= countCharInString) and (countCharInString <= minMaxCharPass[1].toInt()))
     }
 
+    //[2]: "b",   [3]:    "bhbjlkbbbbbbb"
     fun countCharInString(pass: String, char: Char): Int {
         return pass.toList().stream()
             .filter() { c -> c.equals(char) }

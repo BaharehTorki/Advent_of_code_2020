@@ -19,6 +19,8 @@ class Day02(input: List<String>) {
     fun solvePart2(): Int =
         data.count { it.validPart2 }
 
+    // data class reduce amount of boilerplate code required, and comparisons with the same code
+
     data class PasswordRow(val range: IntRange, val letter: Char, val password: String) {
 
         val validPart1 = password.count { it == letter } in range
