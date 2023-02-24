@@ -29,31 +29,13 @@ class Day2Test {
 
     }
 
-/*    @Test
-    fun isCorrect() {
-        //var example = listOf("2-8 v: vvpvvvjvvj", "1-5 k: rmkvkkkk", "2-9 j: rmjnjtjjjj", "1-7 p: mhnpspp")
-        var example = listOf("2-8 v: vvpvvvjvvj", "1-5 k: rmkvkkkk", "2-9 j: rmjnjtjjjj", "1-7 p: mhnpspp")
-
-        val actual = SecondDay("").isCorrect(example)
-
-        var actual1 = actual[0].get(0)
-        var actual2 = actual[0].get(1)
-        var actual3 = actual[0].get(2)
-        var actual4 = actual[0].get(3)
-        assertTrue(actual1(true, ("2")))
-        assertTrue(actual2(true, ("8")))
-        assertTrue(actual3(true, ("v")))
-        assertTrue(actual4(true, ("vvpvvvjvvj")))
-    }*/
-
-
     @Test
     fun countCharInString() {
         val exampleStr = "5-8 Q: TCQQQGMMQTTTVW"
         val exampleChar = 'Q'
 
         val actualString1 = SecondDay("").countCharInString(exampleStr, exampleChar)
-        assertEquals(arrayListOf("5", "8", "Q", "TCQQQGMMQTTTVW"), actualString1)
+        assertEquals(5, actualString1)
 
     }
 
