@@ -1,3 +1,5 @@
+package se.nackademin
+
 /*
  * Copyright (c) 2020 by Todd Ginsberg
  */
@@ -7,7 +9,6 @@
  * Problem Description: http://adventofcode.com/2020/day/3
  * Blog Post/Commentary: https://todd.ginsberg.com/post/advent-of-code/2020/day3/
  */
-package com.ginsberg.advent2020
 
 class Day03(private val forest: List<String>) {
 

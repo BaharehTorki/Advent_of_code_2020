@@ -1,3 +1,7 @@
+package se.nackademin
+
+
+
 /*
  * Copyright (c) 2020 by Todd Ginsberg
  */
@@ -7,8 +11,10 @@
  * Problem Description: http://adventofcode.com/2020/day/2
  * Blog Post/Commentary: https://todd.ginsberg.com/post/advent-of-code/2020/day2/
  */
-package com.ginsberg.advent2020
 
+fun main(){
+
+}
 class Day02(input: List<String>) {
 
     private val data: List<PasswordRow> = input.map { PasswordRow.of(it) }
@@ -37,5 +43,4 @@ class Day02(input: List<String>) {
             }
         }
     }
-
 }

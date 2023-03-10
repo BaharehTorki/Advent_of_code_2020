@@ -46,8 +46,6 @@ class ThirdDay(private var filePath: String) {
             .map() { (r, d) -> calculateTrees(r, d) }
             .reduce { a, b -> a * b }
             .get()
-
-
     }
 
 }

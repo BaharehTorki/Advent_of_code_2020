@@ -3,6 +3,7 @@ package se.nackademin
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals as assertEquals1
 
 class Day3Test {
 
@@ -10,11 +11,11 @@ class Day3Test {
 
     @Test
     fun should_calculateTrees_correct() {
-        assertEquals(79, listOfTree.calculateTrees(1, 1))
-        assertEquals(216, listOfTree.calculateTrees(3, 1))
-        assertEquals(91, listOfTree.calculateTrees(5, 1))
-        assertEquals(96, listOfTree.calculateTrees(7, 1))
-        assertEquals(45, listOfTree.calculateTrees(1, 2))
+        assertEquals1(79, listOfTree.calculateTrees(1, 1))
+        assertEquals1(216, listOfTree.calculateTrees(3, 1))
+        assertEquals1(91, listOfTree.calculateTrees(5, 1))
+        assertEquals1(96, listOfTree.calculateTrees(7, 1))
+        assertEquals1(45, listOfTree.calculateTrees(1, 2))
     }
 
     @Test
@@ -26,17 +27,17 @@ class Day3Test {
         val actualChar3 = ThirdDay("").getCharAt(example1, 31)
         val actualChar4 = ThirdDay("").getCharAt(example1, 32)
 
-        assertEquals('A', actualChar1)
-        assertEquals('.', actualChar2)
-        assertEquals('#', actualChar3)
-        assertEquals('.', actualChar4)
+        assertEquals1('A', actualChar1)
+        assertEquals1('.', actualChar2)
+        assertEquals1('#', actualChar3)
+        assertEquals1('.', actualChar4)
     }
 
     @Test
     fun calculateTrees2_should_return_multiple_of_each_result() {
         val actual = listOfTree.calculateTrees2()
-        val expected = 79*216*91*96*45
-        assertEquals(expected, actual)
+        val expected = 79 * 216 * 91 * 96 * 45
+        assertEquals1(expected, actual)
+        println(expected)
     }
-
 }
