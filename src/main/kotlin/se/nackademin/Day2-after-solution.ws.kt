@@ -1,7 +1,6 @@
 package se.nackademin
 
 
-
 /*
  * Copyright (c) 2020 by Todd Ginsberg
  */
@@ -12,9 +11,6 @@ package se.nackademin
  * Blog Post/Commentary: https://todd.ginsberg.com/post/advent-of-code/2020/day2/
  */
 
-fun main(){
-
-}
 class Day02(input: List<String>) {
 
     private val data: List<PasswordRow> = input.map { PasswordRow.of(it) }
@@ -31,7 +27,7 @@ class Day02(input: List<String>) {
 
         val validPart1 = password.count { it == letter } in range
 
-        val validPart2 = (password[range.first-1] == letter) xor (password[range.last-1] == letter)
+        val validPart2 = (password[range.first - 1] == letter) xor (password[range.last - 1] == letter)
 
         companion object {
 
@@ -39,7 +35,7 @@ class Day02(input: List<String>) {
 
             fun of(input: String): PasswordRow {
                 val (min, max, letter, password) = pattern.find(input)!!.destructured
-                return PasswordRow(min.toInt() .. max.toInt(), letter.first(), password)
+                return PasswordRow(min.toInt()..max.toInt(), letter.first(), password)
             }
         }
     }

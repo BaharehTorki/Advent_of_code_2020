@@ -23,8 +23,8 @@ fun main() {
     println("Day3 part2:" + thirdDay.calculateTrees2())//6708199680
 
 //-------------------------------after solution--------------------------------
-/*    println("Day2 part1:" + nextSolutionDay2.solvePart1())
-    println("Day2 part2:" + nextSolutionDay2.solvePart2())*/
+/*    println("Day2 part1:" + Day02.solvePart1())
+    println("Day2 part2:" + Day02.solvePart2())*/
 
 //-----------------------------------------------------------------------------
 }
